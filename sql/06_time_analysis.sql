@@ -26,6 +26,50 @@
 -- TIME AGGREGATION (REVENUE, PROFIT, DEMAND)
 -- ============================================================
 
+-- ============================================================
+-- REVENUE & PROFIT BY HOUR
+-- ============================================================
+
+with time_details as(
+select extract(hour from trip_time) as hour_window,
+sum(fare_amount) as total_revenue,
+sum(fare_amount-cost_amount) as total_profit,
+count(trip_id) as total_no_of_trips
+from trips
+where trip_status='completed'
+group by 1
+)
+select hour_window,total_revenue,total_profit
+from time_details
+order by 2 desc;
+
+
+-- ============================================================
+-- DEMAND & EFFICIENCY (PROFIT PER TRIP)
+-- ============================================================
+
+with time_details as(
+select extract(hour from trip_time) as hour_window,
+sum(fare_amount) as total_revenue,
+sum(fare_amount-cost_amount) as total_profit,
+count(trip_id) as total_no_of_trips
+from trips
+where trip_status='completed'
+group by 1
+)
+select hour_window,total_no_of_trips,round((total_profit/total_no_of_trips),2) as avg_profit_per_hour
+from time_details
+order by 2 desc;
+
+
+-- ============================================================
+-- TOTAL TRIPS (FOR COMPLETION RATE CALCULATION)
+-- ============================================================
+
+-- ============================================================
+-- COMPLETION RATE BY HOUR
+-- ============================================================
+
 with time_details as(
 select extract(hour from trip_time) as hour_window,
 sum(fare_amount) as total_revenue,
@@ -35,11 +79,6 @@ from trips
 where trip_status='completed'
 group by 1
 ),
-
--- ============================================================
--- TOTAL TRIPS (FOR COMPLETION RATE CALCULATION)
--- ============================================================
-
 total_trips as
 (
 select extract(hour from trip_time) as hour_window,
@@ -47,27 +86,6 @@ count(*) as uncomp_and_comp_trip
 from trips
 group by 1
 )
-
--- ============================================================
--- REVENUE & PROFIT BY HOUR
--- ============================================================
-
-select hour_window,total_revenue,total_profit
-from time_details
-order by 2 desc;
-
--- ============================================================
--- DEMAND & EFFICIENCY (PROFIT PER TRIP)
--- ============================================================
-
-select hour_window,total_no_of_trips,round((total_profit/total_no_of_trips),2) as avg_profit_per_hour
-from time_details
-order by 2 desc;
-
--- ============================================================
--- COMPLETION RATE BY HOUR
--- ============================================================
-
 select td.hour_window,round(td.total_no_of_trips*100.0/tt. uncomp_and_comp_trip,2) as completion_rate
 from time_details td
 join total_trips tt
