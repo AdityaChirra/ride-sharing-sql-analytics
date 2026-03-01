@@ -23,17 +23,6 @@ A ride-sharing platform is generating revenue but also generating losses — in 
 
 ---
 
-## 🗂️ Dataset Overview
-
-| Field | Detail |
-|---|---|
-| Total Trips | 85,791 |
-| Locations | HITEC City, Gachibowli, Madhapur, Shamshabad Airport, Banjara Hills, Secunderabad, Jubilee Hills, Kukatpally, LB Nagar, Ameerpet |
-| Columns | Trip ID, Driver, Pickup/Drop Location, Status, Revenue, Cost, Timestamp |
-| Statuses | Completed, Cancelled, No-show |
-
----
-
 ## 📊 Key Metrics Snapshot
 
 | Metric | Value |
