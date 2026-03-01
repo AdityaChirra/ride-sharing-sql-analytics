@@ -90,7 +90,6 @@ The system doesn't have a demand problem — it has a **synchronization problem*
 ```
 ride-sharing-sql-analytics/
 │   README.md
-│
 ├───data
 │       drivers.csv
 │       locations.csv
@@ -98,18 +97,22 @@ ride-sharing-sql-analytics/
 │       riders.csv
 │       trips.csv
 │
-├───output
+├───outputs
 │       results.txt
-│       run_all.sql
 │
 └───sql
-        01_schema.sql
-        02_load_data.sql
-        03_basic_metrics.sql
-        04_revenue_analysis.sql
-        05_driver_analysis.sql
-        06_time_analysis.sql
-        07_profit_loss.sql
+    │   run_all.sql
+    │
+    ├───analysis
+    │       01_basic_metrics.sql
+    │       02_revenue_analysis.sql
+    │       03_driver_analysis.sql
+    │       04_time_analysis.sql
+    │       05_profit_loss.sql
+    │
+    └───setup
+            01_schema.sql
+            02_load_data.sql
 ```
 
 ---
