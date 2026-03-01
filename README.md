@@ -16,6 +16,8 @@ A ride-sharing platform is generating revenue but also generating losses — in 
 
 ## 🎯 Objective
 
+Focused on identifying systemic inefficiencies in demand-supply alignment and pricing dynamics.
+
 - Measure operational and financial performance
 - Pinpoint where and when losses occur
 - Identify which drivers are profitable and which aren't
@@ -44,9 +46,17 @@ A ride-sharing platform is generating revenue but also generating losses — in 
 - **Airport is a premium outlier** — Shamshabad Airport averages ₹982/trip (3× the system average). It behaves like a different business entirely.
 - **Peak hours = peak losses** — 17:00–20:00 generates the most revenue *and* the most losses. Demand spikes outpace supply every evening.
 - **Same zones, same problem** — The top revenue locations are also the top loss locations. Growth and inefficiency are happening in the same place.
-- **Driver performance is wildly uneven** — Top drivers average ₹400+/trip; bottom performers fall under ₹200. This isn't bad luck — it's behavior.
+- **Driver performance shows significant variance** — Top drivers average ₹400+/trip; bottom performers fall under ₹200. This variation is driven by driver behavior, not randomness.
 - **Losses follow a pattern** — Concentrated across specific drivers, specific hours, specific locations. That's a system problem, not an outlier problem.
 - **The system is reactive** — Demand patterns are predictable (commute hours, evening peaks), yet the platform responds after the spike, not before it.
+
+---
+
+## 🔑 Key Takeaway
+
+- High demand does not guarantee efficiency
+- Revenue concentration creates operational risk
+- Profitability depends on synchronization, not volume
 
 ---
 
@@ -68,10 +78,10 @@ The system doesn't have a demand problem — it has a **synchronization problem*
 
 ## 🔭 Future Scope
 
-- Route-level P&L — profit by origin-destination pair
-- Demand forecasting — predict hourly trip volume by zone
-- Driver clustering — segment drivers by behavioral patterns
-- Pricing elasticity — find the surge ceiling before trips drop off
+- Profitability by origin-destination pairs
+- Time-series demand prediction by zone
+- Behavioral segmentation of drivers
+- Optimal surge pricing threshold analysis
 
 ---
 
