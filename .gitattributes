@@ -1,0 +1,30 @@
+# Auto detect text files and normalize line endings to LF
+* text=auto
+
+# SQL files
+*.sql text eol=lf
+*.psql text eol=lf
+
+# CSV data files
+*.csv text eol=lf
+
+# Documentation
+*.md text eol=lf
+README.md text eol=lf
+.gitignore text eol=lf
+
+# Git attributes
+.gitattributes text eol=lf
+.gitignore text eol=lf
+
+# Output files
+*.txt text eol=lf
+results.txt text eol=lf
+
+# Binary files (if any)
+*.xlsx binary
+*.xls binary
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
